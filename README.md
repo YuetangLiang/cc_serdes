@@ -29,3 +29,11 @@ void test_serdes() {
 }
 
 ```
+## des sample
+```cpp
+int timeout = 1000;
+DataCenter::getInstance()->pop(ap_topic, ap_data, timeout);
+auto maf = hps::from_string<maf_worldmodel::PredictionResult>(ap_data);
+ros_cpp_struct_convert::to_ros(maf, msg);
+pubrs_[ros_topic].publish(msg);
+```
